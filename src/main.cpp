@@ -12,6 +12,15 @@ int startUp(){
     fs::path path{ _name };
 
      if(fs::exists(path)){
+        if(fs::is_empty(path)){
+            cout << "Folders and Files are missing - trying to fix this issue! Please wait!" << name << endl;
+            _name = "C:\\dataDino\\data\\default";
+            fs::path path{ _name };
+            fs::create_directory(path);
+            _name = "C:\\dataDino\\";
+            fs::path path{ _name };
+            fs::create_directory(path);
+        }
         cout << "Database checkup completed!" << endl;
         return 0;
     }
