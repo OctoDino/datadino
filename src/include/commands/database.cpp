@@ -3,6 +3,7 @@
  * db delete <name>
  * db list
 **/
+#include "commands.h"
 
 #include <filesystem>
     namespace fs = std::filesystem;
@@ -11,8 +12,6 @@
 #include <fstream>
 
 using namespace std;
-
-string currentDB = "none";
 
 int createDatabase(string name){
     if(name == "" || name == " " || name == "none"){

@@ -1,15 +1,47 @@
 #include <iostream>
 #include <string>
+#include <filesystem>
+    namespace fs = std::filesystem;
+#include <fstream>
+#include "include/commands/commands.h"
 
 using namespace std;
 
 int startUp(){
+    string _name = "C:\\dataDino";
+    fs::path path{ _name };
+
+     if(fs::exists(path)){
+        if(fs::is_empty(path)){
+            cout << "Folders and Files are missing - trying to fix this issue! Please wait!" << name << endl;
+            _name = "C:\\dataDino\\data\\default";
+            fs::path path{ _name };
+            fs::create_directory(path);
+            _name = "C:\\dataDino\\";
+            fs::path path{ _name };
+            fs::create_directory(path);
+        }
+        cout << "Database checkup completed!" << endl;
+        return 0;
+    }
+    else{
+        
+        cout << "Folders and Files are missing - trying to fix this issue! Please wait!" << name << endl;
+        _name = "C:\\dataDino\\data\\default";
+        fs::path path{ _name };
+        fs::create_directory(path);
+        _name = "C:\\dataDino\\";
+        fs::path path{ _name };
+        fs::create_directory(path);
+        return 1;
+    }
     //TODO: Starting Server
     cout << "dataDino Server v. 1.0" << endl;
     return 0;
 }
 
-int commandManager(string command){
+int commandManager(string command)
+{
     string firstArg = command.substr(0, command.find(" "));
     if(firstArg == "DB" || firstArg == "db"){
         string secondArg = command.substr(command.find(" ") + 1);
@@ -27,16 +59,14 @@ int commandManager(string command){
         else{
             cout << "Error: Unknown DB command! Try HELP DB" << endl;
         }
+    }
     
     else if(firstArg == "HELP" || firstArg == "help"){
         string secondArg = command.substr(command.find(" ") + 1);
         cmdHelp(secondArg); //TODO: Implement cmdHelp in includes/commands/help.cpp
     }
-    else{
-        cout << "Error: Unknown command! Try HELP" << endl;
-    }
-    }
-    }
+    
+    
 
     else if(firstArg == "Set" || firstArg == "set"){
         string secondArg = command.substr(command.find(" ") + 1);
@@ -76,12 +106,13 @@ int commandManager(string command){
     return 0;
 }
 
+
 int main(){
     startUp(); //StartUp Sequence
     cout << "C:\\dataDino> ";
 
     string command;
     cin >> command;
-
+    commandManager(command);
     
 }
