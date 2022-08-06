@@ -82,6 +82,6 @@ int main(){
 
     string command;
     cin >> command;
-
+    commandManager(command);
     
 }
