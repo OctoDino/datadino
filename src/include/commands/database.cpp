@@ -3,6 +3,7 @@
  * db delete <name>
  * db list
 **/
+#include "commands.h"
 
 #include <filesystem>
     namespace fs = std::filesystem;
