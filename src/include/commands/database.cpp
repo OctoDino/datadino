@@ -13,8 +13,6 @@
 
 using namespace std;
 
-string currentDB = "none";
-
 int createDatabase(string name){
     if(name == "" || name == " " || name == "none"){
         cout << "Error: No name given/Name cannot be blanck or 'none'!" << endl;

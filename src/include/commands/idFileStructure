@@ -1,0 +1,4 @@
+default => [databaseName]
+11 => [databaseID]
+00000000 => [lastObjectID]
+none => [password]
