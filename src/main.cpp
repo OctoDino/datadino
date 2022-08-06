@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 
+#include "include/commands/commands.h"
+
 using namespace std;
 
 int startUp(){
