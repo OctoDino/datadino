@@ -6,11 +6,12 @@ A opensource database
     () => must
     [] => optional
     
-    SET "(value)"  - set a value for an object  ::  * objectID maby comming as a parameter in a later Version
+    SET (value)  - set a value for an object  ::  * objectID maby comming as a parameter in a later Version
     GET (objectID) - Get the value of an object
-    DELETE/DEL (objectID) "[value]" - Delete an object
-    EDIT/EDT (objectID) "[value]" - Edits an objects value   ::  /!\ This command maby not in relase
+    DELETE/DEL (objectID) [value] - Delete an object
+    EDIT/EDT (objectID) [value] - Edits an objects value   ::  /!\ This command maby not in relase
     KILL - Kills the Server imediatly
+    DB (CREATE/DELETE/LIST) <name> - Creates/Deletes/Lists the Database name only needed when creating or deleting a Database
     COFIG - Opens the Server config.txt file
 
     HELP - Opens a list with all commands
