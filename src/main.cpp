@@ -9,7 +9,8 @@ int startUp(){
     return 0;
 }
 
-int commandManager(string command){
+int commandManager(string command)
+{
     string firstArg = command.substr(0, command.find(" "));
     if(firstArg == "DB" || firstArg == "db"){
         string secondArg = command.substr(command.find(" ") + 1);
@@ -27,16 +28,14 @@ int commandManager(string command){
         else{
             cout << "Error: Unknown DB command! Try HELP DB" << endl;
         }
+    }
     
     else if(firstArg == "HELP" || firstArg == "help"){
         string secondArg = command.substr(command.find(" ") + 1);
         cmdHelp(secondArg); //TODO: Implement cmdHelp in includes/commands/help.cpp
     }
-    else{
-        cout << "Error: Unknown command! Try HELP" << endl;
-    }
-    }
-    }
+    
+    
 
     else if(firstArg == "Set" || firstArg == "set"){
         string secondArg = command.substr(command.find(" ") + 1);
@@ -75,6 +74,7 @@ int commandManager(string command){
     }
     return 0;
 }
+
 
 int main(){
     startUp(); //StartUp Sequence
