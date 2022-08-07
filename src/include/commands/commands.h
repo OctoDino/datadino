@@ -16,4 +16,6 @@ int createDatabase(string name);
 int deleteDatabase(string name);
 int listDatabases();
 
+int setObject(string value);
+
 #endif
