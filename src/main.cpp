@@ -14,7 +14,7 @@ int startUp(){
      if(fs::exists(path)){
         if(fs::is_empty(path)){
             cout << "Folders and Files are missing - trying to fix this issue! Please wait!" << name << endl;
-            _name = "C:\\dataDino\\data\\default";
+            _name = "C:\\dataDino\\data\\11"; //11 = default database
             fs::path path{ _name };
             fs::create_directory(path);
             _name = "C:\\dataDino\\";
@@ -27,7 +27,7 @@ int startUp(){
     else{
         
         cout << "Folders and Files are missing - trying to fix this issue! Please wait!" << name << endl;
-        _name = "C:\\dataDino\\data\\default";
+        _name = "C:\\dataDino\\data\\11"; //11 = default database
         fs::path path{ _name };
         fs::create_directory(path);
         _name = "C:\\dataDino\\";
